@@ -28,3 +28,9 @@ local 캐시를 사용하는 프로파일입니다. 각각 8081, 8082 포트를 
 ### 3. run application (redis)
 redis 캐시를 사용하는 프로파일입니다. 각각 8081, 8082 포트를 사용합니다.
 ![img.png](docs/redis.png)
+
+## http 요청
+어플리케이션 실행 시 id가 0인 FooAggregate가 생성됩니다. FooAggregate는 0부터 시작하여 1씩 증가하는 increase 메소드를 가지고 있습니다.
+```http
+POST http://localhost:8080/foo/0/increase
+```
