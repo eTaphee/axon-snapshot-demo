@@ -10,7 +10,7 @@ import org.axonframework.modelling.command.AggregateIdentifier
 import org.axonframework.modelling.command.AggregateLifecycle.apply
 import org.axonframework.spring.stereotype.Aggregate
 
-@Aggregate(snapshotTriggerDefinition = "snapShotTrigger")
+@Aggregate(snapshotTriggerDefinition = "snapshotTrigger", cache = "snapshotCache")
 class FooAggregate {
 
     @AggregateIdentifier
