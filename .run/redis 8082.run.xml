@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="redis 8082" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="redis">
+    <option name="ACTIVE_PROFILES" value="redis" />
+    <envs>
+      <env name="SERVER_PORT" value="8082" />
+    </envs>
+    <module name="axon-snapshot-demo.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="im.etap.AxonSnapshotDemoApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
