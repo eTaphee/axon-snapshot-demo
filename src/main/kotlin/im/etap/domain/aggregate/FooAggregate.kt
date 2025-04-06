@@ -28,6 +28,7 @@ class FooAggregate {
     @EventSourcingHandler
     fun on(event: FooCreatedEvent) {
         this.id = event.id
+        println("FooAggregate created with id: $id")
     }
 
     @CommandHandler
@@ -39,5 +40,6 @@ class FooAggregate {
     @EventSourcingHandler
     fun on(event: FooValueIncreasedEvent) {
         this.value++
+        println("FooAggregate value increased to: $value")
     }
 }
