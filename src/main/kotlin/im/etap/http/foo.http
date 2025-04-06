@@ -1,0 +1,5 @@
+### create
+POST http://localhost:8080/foo
+
+### increase
+POST http://localhost:8080/foo/0/increase
