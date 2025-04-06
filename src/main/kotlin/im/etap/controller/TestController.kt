@@ -23,6 +23,7 @@ class TestController(
 
     @PostMapping("{id}/increase")
     fun increase(@PathVariable id: String): Int {
+        println("call increase foo value")
         val command = IncreaseFooValueCommand(id = id)
         val value = commandGateway.sendAndWait<Int>(command)
         return value
