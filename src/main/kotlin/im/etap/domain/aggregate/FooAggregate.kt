@@ -10,7 +10,7 @@ import org.axonframework.modelling.command.AggregateIdentifier
 import org.axonframework.modelling.command.AggregateLifecycle.apply
 import org.axonframework.spring.stereotype.Aggregate
 
-@Aggregate
+@Aggregate(snapshotTriggerDefinition = "snapShotTrigger")
 class FooAggregate {
 
     @AggregateIdentifier
@@ -33,13 +33,14 @@ class FooAggregate {
 
     @CommandHandler
     fun handle(command: IncreaseFooValueCommand): Int {
-        apply(FooValueIncreasedEvent(command.id))
-        return this.value
+        val event = FooValueIncreasedEvent(command.id, this.value + 1)
+        apply(event)
+        return event.value
     }
 
     @EventSourcingHandler
     fun on(event: FooValueIncreasedEvent) {
-        this.value++
+        this.value = event.value
         println("FooAggregate value increased to: $value")
     }
 }
